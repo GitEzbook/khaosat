@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khảo sát & chăm sóc khách hàng</title>
+    <title>Hệ thống Chăm sóc khách hàng | Khảo sát</title>
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden; /* Ẩn thanh cuộn của trang gốc */
-            background-color: #f4f6f8;
-        }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;
-        }
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+        iframe { width: 100%; height: 100%; border: none; display: block; }
     </style>
 </head>
 <body>
-    <!-- Nhúng link thực thi Web App GAS của bạn -->
-    <iframe src="https://script.google.com/macros/s/AKfycbzI6pPBlQ6zZ5nhL-BvU2cEo9aOYxo6Y0IXT0ViYP1emVnB8Ib6h2-nmgJKsAL8D2ue/exec"></iframe>
+    <iframe id="gasFrame" src=""></iframe>
+
+    <script>
+        // Link gốc Web App của bạn
+        const gasBaseUrl = "https://script.google.com/macros/s/AKfycbzI6pPBlQ6zZ5nhL-BvU2cEo9aOYxo6Y0IXT0ViYP1emVnB8Ib6h2-nmgJKsAL8D2ue/exec";
+        
+        // Lấy phần đuôi URL hiện tại (ví dụ: ?page=admin)
+        const urlParams = window.location.search;
+        
+        // Gắn link gốc + phần đuôi vào Iframe
+        document.getElementById('gasFrame').src = gasBaseUrl + urlParams;
+    </script>
 </body>
 </html>
